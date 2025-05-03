@@ -1,0 +1,24 @@
+# Python cache
+__pycache__/
+*.py[cod]
+*.egg
+*.egg-info/
+*.log
+
+# Virtual environment
+.venv/
+env/
+venv/
+
+# Env files
+.env
+.env.*
+
+# MacOS system files
+.DS_Store
+
+# VSCode settings
+.vscode/
+
+# Qdrant local DB (если не используешь Cloud)
+chroma_db/
