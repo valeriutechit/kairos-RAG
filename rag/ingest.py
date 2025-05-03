@@ -2,8 +2,11 @@
 import os, glob
 from qdrant_client import QdrantClient
 from qdrant_client.http.models import Distance, VectorParams, PointStruct
-from langchain.embeddings import OpenAIEmbeddings
+from langchain_community.embeddings import OpenAIEmbeddings
 from uuid import uuid4
+from dotenv import load_dotenv
+load_dotenv()
+import os
 
 QDRANT_URL = os.getenv("QDRANT_URL", "https://your-url.qdrant.io")  # заменишь в .env
 QDRANT_API_KEY = os.getenv("QDRANT_API_KEY", "your-api-key")
@@ -17,7 +20,7 @@ client = QdrantClient(
 )
 
 # Инициализация эмбеддингов
-embedder = OpenAIEmbeddings()
+embedder = OpenAIEmbeddings(openai_api_key=os.getenv("OPENAI_API_KEY"))
 
 def ingest_documents():
     # Создание коллекции, если не существует
