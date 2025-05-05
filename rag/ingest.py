@@ -8,8 +8,9 @@ from dotenv import load_dotenv
 load_dotenv()
 import os
 
-QDRANT_URL = os.getenv("QDRANT_URL", "https://your-url.qdrant.io")  # заменишь в .env
-QDRANT_API_KEY = os.getenv("QDRANT_API_KEY", "your-api-key")
+# Define Qdrant URL and API key from .env file
+QDRANT_URL = os.getenv("QDRANT_URL")  # Qdrant URL from .env file
+QDRANT_API_KEY = os.getenv("QDRANT_API_KEY")  # Define Qdrant API key from .env file
 COLLECTION_NAME = "kairos_rag"
 DATA_PATH = "./data"
 

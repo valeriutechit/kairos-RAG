@@ -1,6 +1,8 @@
-openai>=1.0.0  
-tiktoken  
-qdrant-client  
-langchain  
-langchain-community  
-python-dotenv  
+fastapi
+uvicorn[standard]
+openai>=1.0.0
+tiktoken
+langchain
+langchain-community
+qdrant-client
+python-dotenv

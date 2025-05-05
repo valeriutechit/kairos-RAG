@@ -2,8 +2,11 @@
 
 import { useState } from 'react';
 
+const MODES = ['default', 'stoic', 'trickster', 'dark'];
+
 export default function Home() {
   const [query, setQuery] = useState('');
+  const [mode, setMode] = useState('default');
   const [response, setResponse] = useState('');
   const [loading, setLoading] = useState(false);
 
@@ -14,7 +17,7 @@ export default function Home() {
       const res = await fetch('/api/ask', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ query }),
+        body: JSON.stringify({ query, mode }),
       });
       const data = await res.json();
       setResponse(data.answer);
@@ -37,6 +40,20 @@ export default function Home() {
         className="w-full max-w-xl p-3 bg-zinc-900 border border-zinc-700 text-white rounded-md"
         placeholder="Ask Kairos..."
       />
+
+      <div className="mt-4">
+        <select
+          value={mode}
+          onChange={(e) => setMode(e.target.value)}
+          className="bg-zinc-900 border border-zinc-700 text-white rounded px-4 py-2"
+        >
+          {MODES.map((m) => (
+            <option key={m} value={m}>
+              {m}
+            </option>
+          ))}
+        </select>
+      </div>
 
       <button
         onClick={handleAsk}
