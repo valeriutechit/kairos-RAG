@@ -3,6 +3,7 @@ uvicorn[standard]
 openai>=1.0.0
 tiktoken
 langchain
+langchain-openai
 langchain-community
 qdrant-client
 python-dotenv

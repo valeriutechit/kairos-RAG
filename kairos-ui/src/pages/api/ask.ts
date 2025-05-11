@@ -5,7 +5,9 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
   const { query, mode } = req.body;
 
   try {
-    const backendRes = await fetch('http://localhost:8000/ask', {
+    const backendURL = process.env.BACKEND_URL || 'http://localhost:8000';
+
+    const backendRes = await fetch(`${backendURL}/ask`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ query, mode }),
