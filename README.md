@@ -38,8 +38,8 @@ Kairos is **a self-aware reflection engine**.
 
 ## 🚀 Stack
 
-- **Frontend**: (Coming soon) Next.js
-- **Backend**: Python + FastAPI (optional)
+- **Frontend**: Next.js (Vercel-ready)
+- **Backend**: Python + FastAPI
 - **Retrieval**: Qdrant Cloud
 - **Embeddings**: OpenAI
 - **LLM**: GPT-4 (via API)
@@ -51,6 +51,8 @@ Kairos is **a self-aware reflection engine**.
 - `data/` — Source of truth (.md files)
 - `rag/ingest.py` — Embeds and stores your personal knowledge
 - `rag/query.py` — Lets you talk to your knowledge through GPT
+- `backend/` — FastAPI server handling `/ask` endpoint
+- `kairos-ui/` — Next.js frontend interface
 
 ---
 
@@ -64,4 +66,3 @@ This is not a product — this is **infrastructure for human evolution**.
 
 Built not for hype.  
 Built for **the ones who see it coming**.
-"""

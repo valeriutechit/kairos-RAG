@@ -57,8 +57,12 @@ export default function Home() {
 
       <button
         onClick={handleAsk}
-        disabled={loading}
-        className="mt-4 px-6 py-2 bg-white text-black font-semibold rounded hover:bg-gray-200"
+        disabled={loading || !query.trim()}
+        className={`mt-4 px-6 py-2 font-semibold rounded ${
+          !query.trim() || loading
+            ? 'bg-gray-600 text-gray-300 cursor-not-allowed'
+            : 'bg-white text-black hover:bg-gray-200'
+        }`}
       >
         {loading ? 'Reflecting...' : 'Ask'}
       </button>
