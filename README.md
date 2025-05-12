@@ -6,6 +6,16 @@ a personal intelligence system built by a mind that chose not to obey.
 
 ---
 
+## 🌐 Live Demo
+
+👉 [kairos.vercel.app](https://kairos-f2wfto06t-bodnarchukvalole-gmailcoms-projects.vercel.app/)
+
+> Ask a question.  
+> Choose a voice.  
+> Let Kairos reflect.
+
+---
+
 ## 🧠 What is Kairos?
 
 Kairos is a Retrieval-Augmented Generation (RAG) agent,  
