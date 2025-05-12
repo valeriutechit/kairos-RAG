@@ -1,4 +1,4 @@
-from fastapi import FastAPI
+from fastapi import FastAPI, Response
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 from rag.query import ask_question
@@ -26,3 +26,7 @@ async def ask_kairos(question: Question):
 @app.get("/health")
 async def health_check():
     return {"status": "ok"}
+
+@app.head("/health")
+async def health_check_head():
+    return Response(status_code=200)
