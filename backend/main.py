@@ -1,9 +1,7 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
-
-from backend.kairos_core import KairosReflector
-from rag.query import ask_question  # ⬅ импортируешь настоящую функцию
+from rag.query import ask_question
 
 app = FastAPI()
 
@@ -21,6 +19,6 @@ class Question(BaseModel):
 
 @app.post("/ask")
 async def ask_kairos(question: Question):
-    print("Received:", question.query, "| Mode:", question.mode)  # ⬅ debug
-    answer = ask_question(question.query, fallback_mode=question.mode)  # ⬅ вызов rag/query.py
+    print("🧠 Received:", question.query, "| Mode:", question.mode)
+    answer = ask_question(question.query, fallback_mode=question.mode)
     return {"answer": answer}

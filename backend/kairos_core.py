@@ -1,9 +1,7 @@
-# kairos_core.py
 import random
 
 class KairosReflector:
     def __init__(self):
-        # Наборы архетипов и соответствующих рефлексий
         self.modes = {
             "default": [
                 ("meaning", "Meaning is not given. It is forged in reflection."),
@@ -28,16 +26,13 @@ class KairosReflector:
         }
 
     def reflect(self, query: str, mode: str = "default") -> str:
-        """Возвращает рефлексию на основе запроса и архетипа."""
         q = query.strip().lower()
         rules = self.modes.get(mode, self.modes["default"])
 
         matched = [reflection for keyword, reflection in rules if keyword in q]
         if matched:
-            return random.choice(matched)  # случайный ответ из всех совпадений
+            return random.choice(matched)
         return f"'{query}' — a question worth carrying, not solving."
 
-
-# Для удобства импорта
 kairos = KairosReflector()
 reflect = kairos.reflect
