@@ -22,3 +22,7 @@ async def ask_kairos(question: Question):
     print("🧠 Received:", question.query, "| Mode:", question.mode)
     answer = ask_question(question.query, fallback_mode=question.mode)
     return {"answer": answer}
+
+@app.get("/health")
+async def health_check():
+    return {"status": "ok"}
